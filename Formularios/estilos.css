@@ -1,0 +1,131 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: 
+    radial-gradient(rgb(241, 209, 209) 3px, transparent 4px),
+    radial-gradient(rgb(203, 211, 255) 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+  #fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.container {
+  
+  max-width: 90%;
+  margin: auto;
+  margin-top: 5px;
+}
+/* Con pseudo-clase :root 
+podemos evitar repetición usando variables.  */
+:root { 
+  --cfondo: rgb(47, 62, 95);
+  --cfondoForm1: rgba(1, 80, 88, 0.39);
+  --cfondoForm2: rgb(253, 198, 235);
+  --cnegro: black;
+  --ctexto: rgb(19, 28, 68);
+  --ctextoDark: rgb(1, 35, 39);
+  --cblanco: white;
+  --error: rgb(255, 5, 5);
+}
+/* Esta parte es para el boton de aceptar terminos y condiciones */
+[type="checkbox"] {
+  display: none;
+}
+
+
+
+[type="checkbox"]:checked + label {
+  color: var(--cnegro);
+}
+
+/* ---- Para el formulario ---- */
+
+.form {
+  /* border: 3px solid green; */
+  border-top: 2px solid var(--cnegro);
+  max-width: 400px;
+  padding: 40px 50px;
+  margin: auto;
+  margin-top: 10px;
+  background: linear-gradient(
+    0deg,
+    var(--cfondoForm1) 0%,
+    var(--cfondoForm2) 50%
+  );
+}
+
+.form-titulo {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.form-input {
+  margin-bottom: 20px;
+}
+
+.form-input label {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--ctexto);
+}
+
+.form-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid var(--ctexto);
+}
+
+.form-input input:focus + label {
+  font-weight: bold;
+  color: var(--cnegro);
+}
+/* Para el boton de aceptar condiciones */
+.form-termsAndConditions {
+  margin-left: 15px;
+  position: relative;
+  color: var(--ctexto);
+  font-size: 13px;
+}
+
+/* Para ek boton de enviar */
+.form-boton input {
+  background: var(--cfondo);
+  color: var(--cblanco);
+  padding: 10px 50px;
+  font-size: 25px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  border: none;
+}
+/* Para que el boton cambie de color */
+.form-boton input:hover {
+  background: rgb(128, 128, 231);
+  transition: 0.5s;
+}
+
+.mensajeError {
+  color: rgb(255, 157, 100);
+  margin-top: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.mensajeCorrecto {
+  text-align: center;
+  font-weight: bold;
+}
